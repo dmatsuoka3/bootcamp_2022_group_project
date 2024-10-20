@@ -1,0 +1,123 @@
+<%-include ("partials/headerEdit.ejs", {user})%>
+
+    <br>
+    <br>
+
+    <div class="py-3"></div>
+    <div class="container w-50 rounded bg-light" style="border: 1px solid black;">
+        <form action="/editprofile" method="post" enctype="multipart/form-data">
+            <div>
+                <div>
+                    <h1>Edit profile</h1>
+                    <div style="width: 22%">
+                        <img alt="Change profile photo" height="100" width="100" class="rounded-circle"
+                            src="/profilePicture/<%= user.profilePicture %>">
+                    </div>
+                    <br>
+                    <% console.log(`This is the user: ${user}`) %>
+                        <div class="form-group">
+                            <input type="file" name="image" class="form-control-file">
+                        </div>
+
+                </div>
+            </div>
+
+            <div class="mb-3 py-1 row">
+                <label class="col-sm-2" for="Name">Name</label>
+                <div class="col-sm-10" style="width: 100%; max-width: 355px;">
+                    <input id="Name" name="name" placeholder="Name" type="text" class="form-control"
+                        value="<%= user.name %>">
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2" for="Username">Username</label>
+                <div class="col-sm-10">
+                    <input id="Username" name="username" placeholder="Username" type="text" class="form-control"
+                        value="<%= user.username %>" required>
+                </div>
+            </div>
+            <!-- <div class="mb-3 row">
+                <label class="col-sm-2" for="Website">Website</label>
+                <div class="col-sm-10">
+                    <input id="Website" name="website" placeholder="Website" type="text" class="form-control"
+                        value="<%=// user.website %>">
+                </div>
+            </div> -->
+            <div class="mb-3 row">
+                <label class="col-sm-2" for="Bio">Bio</label>
+                <div class="col-sm-10"><textarea name="bio" rows="6" cols="50" maxlength="150"
+                        placeholder="Enter your bio here...."><%= user.bio %></textarea>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2"></label>
+                <div class="col-sm-10">
+                    <div style="width: 100%; max-width: 350px;">
+                        <div>
+                            <h2>Personal information</h2>
+                        </div>
+                        <div class="fst-italic">Provide your personal information, even if the
+                            account is
+                            used for a business, a pet or something else. This won't be a part of your public profile.
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2" for="Email">Email</label>
+                <div class="col-sm-10">
+                    <div style="width: 100%; max-width: 355px;">
+                        <input id="Email" name="email" placeholder="Email" type="text" class="form-control"
+                            value="<%= user.email %>">
+                    </div>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2" for="Phone Number">Phone number</label>
+                <div class="col-sm-10">
+                    <div style="width: 100%; max-width: 355px;">
+                        <input placeholder="Phone number" name="phone" type="text" class="form-control"
+                            value="<%= user.phone %>">
+                    </div>
+                </div>
+            </div>
+
+            <div class="mb-3 row">
+                <label class="col-sm-2" for="Gender">Gender</label>
+                <div class="col-sm-10">
+                    <fieldset data-role="controlgroup">
+                        <legend>Choose your gender:</legend>
+
+                        <input type="radio" name="gender" id="male" value="male" <%=(user.gender=='male' ? 'checked'
+                            : '' ) %>>
+                        <label for="male">Male</label>
+
+                         <input type="radio" name="gender" id="female" value="female" <%=(user.gender=='female'
+                            ? 'checked' : '' ) %>>
+                        <label for="female">Female</label>
+                    
+                        <input type="radio" name="gender" id="nonbinary" value="nonbinary" <%=(user.gender=='nonbinary'
+                        ? 'checked' : '' ) %>>
+                        <label for="">Nonbinary</label>
+
+                        <input type="radio" name="gender" id="na" value="na" <%=(user.gender=='na' ? 'checked' : '' )
+                            %>>
+                        <label for="Prefer not to say">Prefer not to say</label>
+                    </fieldset>
+                </div>
+            </div>
+            <div class="mb-3 row">
+                <label class="col-sm-2"></label>
+                <div class="col-sm-10">
+                    <button class="btn btn-secondary" type="submit">Update profile</button>
+                    <button class="btn btn-secondary" type="button"
+                        onclick="window.location.href='/deleteprofile'">Delete my
+                        account</button>
+                </div>
+            </div>
+
+        </form>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/styles.css">
+    <script src="https://kit.fontawesome.com/c7c9c0be45.js" crossorigin="anonymous"></script>
+</head>
+
+<header>
+
+    <div class="d-flex flex-row center-block" style="font-size: 15px;">
+		<a href="/feeds" class="fa-solid fa-house fa-2x p-2"></a>
+	</div>
+
+	<div class="container">
+		<div class="profile">
+
+            <h1><%= data[0].name %> </h1>
+			<% if(!data[0].profilePicture ) { %>
+				<div class="profile-image" style="font-size: 60px">
+					<i class="fa-regular fa-user"></i></a>
+				</div>
+			<% } else { %> 
+				<div class="profile-image">
+					<img src="/profilePicture/<%= data[0].profilePicture %>" alt="user profile img" width="150">
+				</div>
+			<!-- menu button to show sidebar -->
+			<% } %>
+
+
+			<!-- <div class="profile-image">
+				<img src="/profilePicture/<%=// data.profilePicture %>" alt="user profile img" width="150">
+			</div> -->
+
+			<div class="profile-stats">
+				<ul>
+					<li><span class="profile-stat-count"><%= count.photos %> </span> posts</li>
+					<li><span class="profile-stat-count"><%= count.followers %></span> followers</li>
+					<li><span class="profile-stat-count"><%= count.followings %> </span> following</li>
+				</ul>
+			</div>
+
+			<div class="profile-bio">
+				<p><span class="profile-real-name"><%= data[0].name %></span></p>
+				<p><%= data[0].bio %></p>
+			</div>
+		</div>
+	</div>
+</header>
+
+<main>
+	<div class="container">
+		<div class="gallery">
+			<%// photos.forEach((element)=> { %> 
+			<div class="gallery-item" tabindex="0">
+                <h2>You can't see their photos unless you follow this user.</h2>
+			</div>
+			<%// }); %>
+			
+		</div>
+	</div>
+</main>
+</body>
+</html>

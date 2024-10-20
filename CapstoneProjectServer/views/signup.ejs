@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create Account for Capstone Project</title>
+    <!-- font awesome -->
+    <script src="https://kit.fontawesome.com/a945e0a33f.js" crossorigin="anonymous"></script>
+
+    <!-- CSS style sheet -->
+
+    <link rel="stylesheet" href="createAccount.css">
+</head>
+
+<body>
+    <div class="container">
+        <form class="form form--hidden" id="createAccount" action="/signup" method="POST" >
+            <h1 class="form__title">PhotoSnap</h1>
+            
+            <div class="text">
+                <h3>Sign up to see photos and videos from your friends.</h3>
+            </div>
+
+            <button class="form__button" type="submit"><i class="fa-brands fa-square-facebook"></i> Log in with Facebook</button>
+
+            <div class="text"><p>Or</p></div>
+
+            <div class="form__message form__message--error"></div>
+
+            <div class="form__input-group">
+                <input type="text" name="email" class="form__input" autofocus placeholder="Email" required>
+            </div>
+
+            <div class="form__input-group">
+                <input type="text" name="name" class="form__input" autofocus placeholder="Full Name" required>
+            </div>
+
+            <div class="form__input-group">
+                <input type="text" name="username" class="form__input" autofocus placeholder="username" required>
+            </div>
+
+            <div class="form__input-group">
+                <input type="password" class="form__input" name="password" autofocus placeholder=" Password" required>
+                <div class="form__input-error-message"></div>
+            </div>
+
+            <div class="text">
+                <p>People who use our service may have uploaded your contact information to "No Name." <a href="#">Learn More</a></p>
+            </div>
+
+            <div class="text">
+                <p>By signing up, you agree to our Terms, <a href="#">Privacy Policy</a>  and  <a href="#">Cookies Policy</a>.</p>
+            </div>
+            <button class="form__button" href="" type="submit">Sign up</button>
+
+        </form>
+
+        <div class="text account">
+            <p class="form__text">
+                Have an account?<a class="form__link" href="/" id="linkLogin">Log in</a>
+            </p>
+
+        </div>
+    </div>
+</body>
+</html>
